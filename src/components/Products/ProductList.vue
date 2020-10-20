@@ -1,7 +1,7 @@
 <template>
     <v-container>
         <v-layout row>
-            <v-flex xs12 sm-6 offset-sm3>
+            <v-flex xs12 sm-6 offset-sm1>
                 <h1 class="text--secondary mb-3">My Products</h1>
                 <v-card
                         class="elevation-10 mb-2"
@@ -22,7 +22,7 @@
                                 <p>{{product.description}}</p>
                             </v-card-text>
                             <v-card-actions>
-                                <v-spacer></v-spacer>
+<!--                                <v-spacer></v-spacer>-->
                                 <v-btn class="info"
                                 :to="'/product/' + product.id"
                                 >Open</v-btn>
