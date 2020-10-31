@@ -84,9 +84,11 @@
                         material: this.material,
                         price: this.price,
                         description: this.description,
-                        promo: this.promo
+                        promo: this.promo,
+                        imageSrc: 'https://image.ibb.co/g6czu8/HP_Omen_17.jpg'
                     }
-                    console.log(product)
+
+                    this.$store.dispatch('createProduct', product)
                 }
             }
         }

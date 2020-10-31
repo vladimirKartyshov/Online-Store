@@ -38,11 +38,16 @@ export default {
 
         },
     mutations: {
-
-        },
+        createProduct(state, payload) {
+            state.products.push(payload)
+        }
+    },
     actions: {
-
-        },
+        createProduct({commit}, payload) {
+            payload.id = 'ggggg'
+            commit('createProduct', payload)
+        }
+    },
 
     getters: {
         products(state) {
@@ -55,6 +60,11 @@ export default {
         },
         myProducts(state) {
             return state.products
+        },
+        productById(state) {
+            return productId => {
+                return state.products.find(product => product.id === productId)
+            }
         }
     }
 }
