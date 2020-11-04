@@ -3,30 +3,30 @@
       <section class="product mt-3 elevation-10">
           <v-layout row wrap>
               <v-flex xs12 lg6>
-                  <img src='https://image.ibb.co/jBZOMo/ASUS_TUF_Gaming_FX504_GD.jpg' class="product_img">
+                  <img :src="product.imageSrc" class="product_img">
               </v-flex>
               <v-flex xs12 lg6>
                   <div class="product_info">
-                      <h5 class="product_title display-1 mb-3 mt-3">Lorem lorem</h5>
+                      <h5 class="product_title display-1 mb-3 mt-3">{{product.title}}</h5>
                       <p class="product_category title">
-                          <span class="product_title">Vender: </span>Lorem
+                          <span class="product_title">Vender: </span>{{product.vendor.charAt(0).toUpperCase() + product.vendor.substr(1)}}
                       </p>
                       <p class="product_price title">
-                          <span class="product_title">Price: </span>1000$
+                          <span class="product_title">Price: </span>{{product.price}}
                       </p>
                       <p class="product_color title">
                           <span class="product_title">Color: </span>
                           <span
-                             :title="'purple'"
-                             :style="{ backgroundColor: 'purple'}"
+                             :title="product.color"
+                             :style="{ backgroundColor: product.color}"
                              class="product_color_bg"
                           ></span>
                       </p>
                       <p class="title">
-                          <span class="product_title">Material: </span>Lorem
+                          <span class="product_title">Material: </span>{{product.material.charAt(0).toUpperCase() + product.material.substr(1)}}
                       </p>
                       <div class="title mb-5">
-                          <p class="product_title mb-2">Description: </p>Lorem:  ffffffffffffffffffffffffffff fffffffff
+                          <p class="product_title mb-2">Description: </p>{{product.description}}
                       </div>
                           <v-btn color="primary" class="headline">Edit</v-btn>  <v-btn color="primary" class="headline">Buy</v-btn>
                   </div>
@@ -38,8 +38,12 @@
 
 <script>
     export default {
-        data () {
-            return{}
+        props: ['id'],
+        computed: {
+            product() {
+                const id = this.id
+                return this.$store.getters.productById(id)
+            }
         }
     }
 </script>
