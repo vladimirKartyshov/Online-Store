@@ -3,7 +3,11 @@ import App from './App.vue'
 import './registerServiceWorker'
 import router from './router'
 import store from './store'
-import * as fb from 'firebase/app'
+// import * as fb from 'firebase/app'
+import  fb from 'firebase/app';
+import 'firebase/firestore';
+import 'firebase/auth';
+import 'firebase/storage';
 import vuetify from './plugins/vuetify';
 
 Vue.config.productionTip = false
