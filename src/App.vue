@@ -3,20 +3,25 @@
    <Navbar/>
       <template v-if="error">
           <v-snackbar
-                  :multi-line="true"
                   :timeout="5000"
+                  :multi-line="true"
                   color="error"
                   @input="closeError"
                   :value="true"
+
           >
-              {{ error }}
-              <v-btn
-                      dark
-                      flat
-                      @click.native="closeError"
-              >
-                  Close
-              </v-btn>
+              {{error}}
+
+              <template v-slot:action="{ attrs }">
+                  <v-btn
+                          color="red"
+                          text
+                          v-bind="attrs"
+                          @click.native="closeError"
+                  >
+                      Close
+                  </v-btn>
+              </template>
           </v-snackbar>
       </template>
  </v-app>
