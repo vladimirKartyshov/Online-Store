@@ -58,12 +58,23 @@
         data () {
             return {
                 sideNav: false,
-                links: [
+            }
+        },
+        computed: {
+            isUserLoggedIn() {
+                return this.$store.getters.isUserLoggedIn
+            },
+            links () {
+                if (this.isUserLoggedIn) {
+                    return [
+                        {title: 'Cart', icon: 'mdi-cart', url: '/checkout'},
+                        {title: 'New Product', icon: 'mdi-plus', url: '/new'},
+                        {title: 'My Products', icon: 'mdi-format-list-bulleted', url: '/list'},
+                    ]
+                }
+                return [
                     {title: 'Login', icon: 'mdi-account-box', url: '/login'},
                     {title: 'Register', icon: 'mdi-face', url: '/register'},
-                    {title: 'Cart', icon: 'mdi-cart', url: '/checkout'},
-                    {title: 'New Product', icon: 'mdi-plus', url: '/new'},
-                    {title: 'My Products', icon: 'mdi-format-list-bulleted', url: '/list'},
                 ]
             }
         }

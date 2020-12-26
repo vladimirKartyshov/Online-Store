@@ -43,7 +43,6 @@
         error() {
             return this.$store.getters.error
         }
-      }
-
+      },
   }
 </script>
