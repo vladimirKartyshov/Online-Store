@@ -47,7 +47,6 @@
             <v-toolbar-items class="hidden-sm-and-down">
 
             <v-btn
-                    flat
                     v-for="(link, i) in links"
                     :key="i"
                     :to="link.url"
@@ -56,7 +55,6 @@
                 {{ link.title }}
             </v-btn>
                 <v-btn
-                        flat
                         @click="onLogout"
                         v-if="isUserLoggedIn"
                 >
