@@ -82,5 +82,39 @@
         border: 1px solid #2b2b2b;
         border-radius: 10px;
     }
+    @media screen and (max-width: 1270px){
+      .product {
+        text-align: center;
+      }
+      .product_info {
+        margin-left: 0;
+      }
+    }
+    @media screen and (max-width: 620px){
+      .product {
+        text-align: start;
+      }
+      .product_img {
+        width: 100%;
+        height: 100%;
+      }
+      .product_title {
+        text-align: center;
+      }
+    }
+    @media screen and (max-width: 400px){
+      .product {
+        padding: 10px;
+        text-align: start;
+        margin-bottom: 120px;
+      }
+      .product_img {
+        height: 250px;
+        width: 100%;
+      }
+      .product_info {
+        margin-left: 0;
+      }
+    }
 
 </style>
